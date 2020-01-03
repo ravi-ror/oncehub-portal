@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   root :to => "static#index"
 
   devise_scope :user do
-    get 'profile', :to => "user#profile"
-    get 'edit-profile', :to => "user#edit_profile"
+    get 'profile', :to => "users#profile"
+    get 'edit-profile', :to => "users#edit_profile"
   end
-  resources :user
   resources :teams
+  resources :users
 end

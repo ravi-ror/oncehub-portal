@@ -1,8 +1,11 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user
 
   def profile
+  end
+
+  def index
   end
 
   def edit_profile
@@ -16,7 +19,7 @@ class UserController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :about, :hobbies)
+    params.require(:user).permit(:first_name, :last_name, :about, :hobbies, :country)
   end
 
   def set_user
