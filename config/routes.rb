@@ -9,4 +9,5 @@ Rails.application.routes.draw do
     get 'edit-profile', :to => "users#edit_profile"
   end
   resources :users
+  resources :inspirational_quotes
 end

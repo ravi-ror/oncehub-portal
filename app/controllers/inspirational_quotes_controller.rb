@@ -1,0 +1,2 @@
+class InspirationalQuotesController < ApplicationController
+end

@@ -1,0 +1,2 @@
+module InspirationalQuotesHelper
+end
