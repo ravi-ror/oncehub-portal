@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'login', to: 'devise/sessions#new'
     get 'recover-password', to: 'devise/passwords#new'
+    delete 'logout', to: 'devise/sessions#destroy'
   end
 end
