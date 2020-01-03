@@ -1,29 +1,29 @@
 <div class="login-container">
   <div class="row">
-  <div class="col-md-12 py-5 px-4">
-    <div class="col-md-6 login-form-1 mx-auto">
-      <h3>Login</h3>
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-group">
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Your Email *", value: "", class: "form-control" %>
-        </div>
-        <div class="form-group">
-          <%= f.password_field :password, type: "password", autocomplete: "current-password", class: "form-control", placeholder: "Your Password *", value: "" %>  
-        </div>
-        <% if devise_mapping.rememberable? %>
+    <div class="col-md-12 py-5 px-4">
+      <div class="col-lg-4 col-md-6 login-form-1 mx-auto">
+        <h3>Login</h3>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-group">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Your Email *", value: "", class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.password_field :password, type: "password", autocomplete: "current-password", class: "form-control", placeholder: "Your Password *", value: "" %>  
+          </div>
+          <% if devise_mapping.rememberable? %>
+            <div class="form-group">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end %>
+          <div class="form-group">
+            <%= f.submit "Log in", class: "btnSubmit", value: "Login"  %>
+          </div>
+          <div class="form-group">
+            <%= render "devise/shared/links" %>
           </div>
         <% end %>
-        <div class="form-group">
-          <%= f.submit "Log in", class: "btnSubmit", value: "Login"  %>
-        </div>
-        <div class="form-group">
-          <%= render "devise/shared/links" %>
-        </div>
-      <% end %>
+      </div>
     </div>
   </div>
-</div>
 </div>
