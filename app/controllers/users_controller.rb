@@ -1,8 +1,11 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user
 
   def profile
+  end
+
+  def index
   end
 
   def edit_profile
