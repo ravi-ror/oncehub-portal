@@ -6,5 +6,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get 'profile', :to => "user#profile"
+    get 'edit-profile', :to => "user#edit_profile"
   end
+  resources :user
 end

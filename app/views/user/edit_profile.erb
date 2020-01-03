@@ -1,0 +1,22 @@
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<%= form_for @user do |f| %>
+  <%= f.text_field :first_name %>
+  <%= f.text_field :last_name %>
+  <%= f.text_area :about %>
+  <%= f.text_area :hobbies %>
+  <%= f.submit "Submit" %>
+<% end %>
