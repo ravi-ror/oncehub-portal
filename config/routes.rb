@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     get 'profile', :to => "users#profile"
     get 'edit-profile', :to => "users#edit_profile"
   end
+  resources :teams
   resources :users
 end
