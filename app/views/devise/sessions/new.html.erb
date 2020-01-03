@@ -1,6 +1,7 @@
 <div class="container login-container">
   <div class="row">
-    <div class="col-md-6 login-form-1">
+  <div class="col-md-12 py-5 px-4">
+    <div class="col-md-6 login-form-1 mx-auto">
       <h3>Sign-in</h3>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-group">
@@ -24,4 +25,5 @@
       <% end %>
     </div>
   </div>
+</div>
 </div>
