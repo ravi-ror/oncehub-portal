@@ -6,8 +6,11 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get 'profile', :to => "user#profile"
+    get 'edit-profile', :to => "user#edit_profile"
     get 'login', to: 'devise/sessions#new'
     get 'recover-password', to: 'devise/passwords#new'
     delete 'logout', to: 'devise/sessions#destroy'
   end
+
+  resources :user
 end
