@@ -1,23 +1,69 @@
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <br>
 <%= form_for @user do |f| %>
-  <%= f.text_field :first_name %>
-  <%= f.text_field :last_name %>
-  <%= f.text_field :country %>
-  <%= f.text_area :about %>
-  <%= f.text_area :hobbies %>
-  <%= f.submit "Submit" %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-12 lead">
+                Edit user profile
+                <hr>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 text-center">
+                <div id="img-preview-block" class="rounded-circle avatar avatar-original center-block" style="background-size:cover;
+                    background-image:url(http://robohash.org/sitsequiquia.png?size=120x120)"></div>
+                <br>
+                <span class="btn btn-link btn-file">Edit image <input type="file" id="upload-img"></span>
+              </div>
+              <div class="col-md-8">
+                <div class="form-group">
+                  <label for="user_last_name">First name</label>
+                  <%= f.text_field :first_name, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                  <label for="user_first_name">Last name</label>
+                  <%= f.text_field :last_name, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                  <label for="user_first_name">Country</label>
+                  <%= f.text_field :country, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                  <label for="user_middle_name">Bio</label>
+                  <%= f.text_area :about, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                  <label for="user_middle_name">Hobbies</label>
+                  <%= f.text_area :hobbies, class: 'form-control' %>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <hr>
+                <button class="btn btn-primary pull-right"><i class="glyphicon glyphicon-floppy-disk"></i> Update</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="delete-user-modal" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p>Are you sure you want to delete account?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 <% end %>
