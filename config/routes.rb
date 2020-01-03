@@ -7,8 +7,21 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'profile', :to => "users#profile"
     get 'edit-profile', :to => "users#edit_profile"
+
+    # Chat functionality
+    get 'private-chat-rooms', to: 'chat_rooms#index'
+    resources :chat_rooms, only: [:new, :create, :show, :index]
+
+
+    get 'create-retro', to: 'retros#create_retro'
+    resources :retros, only: [:show]
   end
   resources :teams
   resources :users
   resources :inspirational_quotes
+
+
+  # root :to => 'chat_rooms#index'
+
+  mount ActionCable.server => '/cable'
 end

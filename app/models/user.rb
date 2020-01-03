@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   belongs_to :team, optional: true
+  has_many :chat_rooms, dependent: :destroy
+  has_many :messages, dependent: :destroy
 
   def name
     "#{first_name} #{last_name}"
