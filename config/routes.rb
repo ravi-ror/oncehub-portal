@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root :to => "static#index"
 
   devise_scope :user do
+    get 'profile', :to => "user#profile"
     get 'login', to: 'devise/sessions#new'
     get 'recover-password', to: 'devise/passwords#new'
     delete 'logout', to: 'devise/sessions#destroy'
