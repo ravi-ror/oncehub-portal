@@ -1,14 +1,23 @@
+<h1>Team</h1>
+
+<%= @team.name %>
+<br/>
+<br/>
+<br/>
+<br/>
+<h1>Users</h1>
+<br/><br/>
 <div class="row text-center">
-  <% @teams.each_with_index do |f, index| %>
+  <% @users.each_with_index do |user, index|%>
     <div class="col-lg-3 col-md-6 mb-4">
       <div class="card h-100">
-        <div class="team-intials <%= getColor(index)%>"><%= getInitial(f.name)%></div>
+        <div class="team-intials <%= getColor(index)%>"><%= user.name.capitalize%></div>
         <div class="card-body">
-        <h4 class="card-title"><%=f.name%></h4>
+        <h4 class="card-title"><%=user.name%></h4>
         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
         </div>
         <div class="card-footer">
-          <a href="/teams/<%=f.id%>" class="btn btn-primary">Find Out More!</a>
+          <a href="/users/<%=user.id%>" class="btn btn-primary">Find Out More!</a>
         </div>
       </div>
     </div>

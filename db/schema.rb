@@ -20,6 +20,11 @@ ActiveRecord::Schema.define(version: 2020_01_04_054340) do
     t.index ["user_id"], name: "index_chat_rooms_on_user_id"
   end
 
+  create_table "chat_rooms_users", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "chat_room_id", null: false
+  end
+
   create_table "inspirational_quotes", force: :cascade do |t|
     t.text "text", null: false
     t.datetime "created_at", null: false

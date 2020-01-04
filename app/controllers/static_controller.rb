@@ -1,5 +1,5 @@
 class StaticController < ApplicationController
   def index
-    render layout: "other"   
+    #render layout: "other"   
   end
 end
