@@ -14,85 +14,61 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-<!--          <img src="images/favicon-gray-last-section.svg" alt="">-->
+        <!--  <img src="images/favicon-gray-last-section.svg" alt="">-->
           Oncehub Portal
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/">Home
-              </a>
-            </li>
+
+        <div class="btn-group dropleft">
+          <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Action
+          </button>
+          <div class="dropdown-menu">
             <% if user_signed_in? %>
-              <li class="nav-item">
-                <a class="nav-link" href="/profile">Profile</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/teams">Teams</a>
-              </li>
-              <li class="nav-item">
-                <%= link_to "Logout", "/logout", method: 'delete', class: "nav-link" %>
-              </li>
+              <a class="dropdown-item" href="#"><%= current_user.name%></a>
+              <a class="dropdown-item" href="#"><%= current_user.email%></a>
+              <a class="dropdown-item" href="/profile">Profile</a>
+              <div class="dropdown-divider"></div>
+              <%= link_to "Logout", "/logout", method: 'delete', class: "dropdown-item" %>
+            <% else %> 
+              <%= link_to "Login", "/login",class: "dropdown-item" %>
             <% end %>
-            <% unless user_signed_in? %>
-              <li class="nav-item">
-                <a class="nav-link" href="/login">Login</a>
-              </li>
-            <% end %>
-          </ul>
+          </div>
         </div>
       </div>
-    </nav>
+    </nav>  <!-- Navigation Ends-->
 
     <!-- Page Content -->
     <div class="container-fluid top-spacing">
-    <% if user_signed_in? %>
-    <div id="wrapper">
-            <!-- Sidebar -->
-            <div id="sidebar-wrapper">
-                <ul class="sidebar-nav">
-                    <li> <a href="#">Home</a>
 
-                    </li>
-                    <li> <a href="#nope" data-toggle="collapse" data-target="#drop1"> Something<span class="caret"></span></a>
-
-                      <ul id="drop1" class="collapse" data-parent="#sideNavParent">
-                          <li><a href="about-us">Something</a>
-
-                          </li>
-                          <li><a href="our-journey">Something</a>
-
-                          </li>
-                          <li><a href="where-we-are-going">Something</a>
-
-                          </li>
-                      </ul>
-                    </li>
-                    <li><a href="/chat_rooms/new">Private Chat room</a>
-
-                    </li>
-                    <li><a href="/retro">Retro</a>
-
-                    </li>
-                    <li><a href="#">Something</a>
-
-                    </li>
-                </ul>
-            </div>
-            <!-- /#sidebar-wrapper -->
+      <!-- /#sidebar-wrapper -->    
+      <% if user_signed_in? %>
+        <div id="wrapper">
+          <!-- Sidebar -->
+          <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+              <li>
+                <a href="/profile">Profile</a>
+              </li>
+              <li>
+                <a href="/teams">Teams</a>
+              </li>
+              <li>
+                <a href="/chat_rooms/new">Private Chat room</a>
+              </li>
+              <li>
+                <a href="/retro">Retro</a>
+              </li>
+              <li>
+                <a href="#">About Us</a>
+              </li>
+            </ul>
+          </div>
+          <!-- /#sidebar-wrapper -->
         </div>
-        <% end %>
-        <!-- /#wrapper -->
-        <% if user_signed_in? %>
-        <div class="menu-active py-4">
-        <% else %>
-        <div class="Py-4">
-        <% end %>
+      <% end %>
+      <div class="<%= user_signed_in? ? 'menu-active py-4' : 'Py-4' %>">
         <%= yield %>
-        </div>
+      </div>
     </div> <!-- Page Content -->
   </body>
 
