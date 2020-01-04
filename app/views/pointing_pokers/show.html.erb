@@ -1,23 +1,57 @@
-<h1>You are giving point to "<%= @poker_room.title %>"</h1>
+<div class="row">
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12 lead">
+            You are giving point to <h1 style="display: inline; font-size: 24px;"><%= @poker_room.title %></h1>
+            <a href="/pointing_pokers/new" class="btn btn-success pull-right">Calculate another story</a>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-Share URL this room ==> <%= @url %>
+<div class="sharableUrl">
+  Share URL this room 
+  <a class="text-info" href="<%= @url %>"><%= @url %></a>
+</div>
 
 <div id="pointing-poker" data-chat-room-id="<%= @poker_room.id %>">
   SOme content
 </div>
 
 <%= form_for @point, url: '#' do |f| %>
+<div class="row">
+  <div class="col-md-4">
   <div class="form-group">
     <%= f.label :point %>
     <%= f.text_field :point, class: 'form-control' %>
     <small class="text-muted">From 2 to 10 characters</small>
   </div>
+  <div class="poker-points">
+    <button class="btn btn-info" type="button">0 points</button>
+    <button class="btn btn-info" type="button">1/2 points</button>
+    <button class="btn btn-info" type="button">1 points</button>
+    <button class="btn btn-info" type="button">2 points</button>
+    <button class="btn btn-info" type="button">3 points</button>
+    <button class="btn btn-info" type="button">5 points</button>
+    <button class="btn btn-info" type="button">8 points</button>
+    <button class="btn btn-info" type="button">?</button>
+  </div>
 
   <%= f.submit "Post", class: 'btn btn-primary btn-lg' %>
+  </div>
+  </div>
 <% end %>
 
 <div>
 </div>
+<br>
+<div class="row">
+  <div class="col-md-6">
 <table class="table">
   <thead>
   <tr>
@@ -34,11 +68,9 @@ Share URL this room ==> <%= @url %>
   <% end %>
   </tbody>
 </table>
+<button class="btn btn-info" type="button" id="calculate">Show Points</button>
+<span id="story-point" class="btn btn-success pull-right"></span>
+</div>
+</div>
 
-<button class="btn btn-primary btn-lg" type="button" id="calculate">Calculate</button>
 
-
-Total story point is ==========++> <span id="story-point"></span>
-
-
-<a href="/pointing_pokers/new" class="btn btn-primary btn-lg">Calculate another story</a>
