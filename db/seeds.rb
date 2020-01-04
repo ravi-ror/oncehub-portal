@@ -17,19 +17,35 @@ deepak = User.create(email: 'deepak@oncehub.com', password: 'oncehub1234', first
 mun = User.create(email: 'munmun@oncehub.com', password: 'oncehub1234', first_name: 'mun', last_name: 'sarkar', country: 'India', about: 'I am developer', hobbies: 'playing cricket')
 sid = User.create(email: 'siddharth@oncehub.com', password: 'oncehub1234', first_name: 'sid', last_name: 'sahi', country: 'India', about: 'I am developer', hobbies: 'playing cricket')
 ravi = User.create(email: 'ravi@oncehub.com', password: 'oncehub1234', first_name: 'ravi', last_name: 'rawat', country: 'India', about: 'I am developer', hobbies: 'playing cricket')
-mavericks.users << [deepak, mun, sid, ravi]
+
+mavericks.members << [deepak, mun, sid, ravi]
+mavericks.members.each { |member| member.add_role :developer }
 
 nagi = User.create(email: 'nagi@oncehub.com', password: 'oncehub1234', first_name: 'nagi', last_name: 'rawat', country: 'India', about: 'I am developer', hobbies: 'playing cricket')
-ashish = User.create(email: 'ashish@oncehub.com', password: 'oncehub1234', first_name: 'ashish', last_name: 'negi', country: 'India', about: 'I am developer', hobbies: 'playing cricket')
-orion.users << [nagi, ashish]
+priyank = User.create(email: 'priyank@oncehub.com', password: 'oncehub1234', first_name: 'priyank', last_name: 'kothiyal', country: 'India', about: 'I am developer', hobbies: 'playing cricket')
+orion.members << [nagi, priyank]
+orion.members.each { |member| member.add_role :developer }
+
 
 amuk = User.create(email: 'amuk@oncehub.com', password: 'oncehub1234', first_name: 'amuk', last_name: 'saxena', country: 'India', about: 'I am developer', hobbies: 'playing cricket')
 rajat = User.create(email: 'rajat@oncehub.com', password: 'oncehub1234', first_name: 'rajat', last_name: 'saxena', country: 'India', about: 'I am developer', hobbies: 'playing cricket')
-hurricanes.users << [amuk, rajat]
+hurricanes.members << [amuk, rajat]
+hurricanes.members.each { |member| member.add_role :developer }
 
 
 ashish_sati = User.create(email: 'ashish.sati@oncehub.com', password: 'oncehub1234', first_name: 'ashish', last_name: 'sati', country: 'India', about: 'I am developer', hobbies: 'playing cricket')
-pacific.users << [ashish_sati]
+pacific.members << [ashish_sati]
+pacific.members.each { |member| member.add_role :developer }
 
 abhinav = User.create(email: 'abhi@oncehub.com', password: 'oncehub1234', first_name: 'abhi', last_name: 'gangwar', country: 'India', about: 'I am developer', hobbies: 'playing cricket')
-pacific.users << [abhinav]
+stark.members << [abhinav]
+pacific.members.each { |member| member.add_role :developer }
+
+
+bharat = User.create(email: 'bharat@oncehub.com', password: 'oncehub1234', first_name: 'bharat', last_name: 'manola', country: 'India', about: 'I am SM', hobbies: 'playing cricket')
+bharat.add_role :sm
+mavericks.members << bharat
+
+ashish_negi = User.create(email: 'ashish@oncehub.com', password: 'oncehub1234', first_name: 'ashish', last_name: 'negi', country: 'India', about: 'I am SM', hobbies: 'playing cricket')
+ashish_negi.add_role :sm
+orion.members << ashish_negi

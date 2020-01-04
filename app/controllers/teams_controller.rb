@@ -7,7 +7,9 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.friendly.find(params[:id])
-    @users = @team.users
+    @users = @team.members.with_role(:developer).to_a
+    @sm = @team.members.with_role(:sm).first
+    #@users.unshift(@team)
   end
 end
   

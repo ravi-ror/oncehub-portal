@@ -1,11 +1,30 @@
-<h1>Team</h1>
+<h1>Team: <%= @team.name %></h1>
+<br/>
+<br/>
+<%if @sm%>
+<h1>SM</h2>
 
-<%= @team.name %>
-<br/>
-<br/>
-<br/>
-<br/>
-<h1>Users</h1>
+<div class="row text-center">
+  <div class="col-lg-3 col-md-6 mb-4">
+    <div class="card h-100">
+      <div class="team-intials team-green">
+        <%#= user.name.capitalize%>
+        <img src="/assets/profile.png" alt="..." class="rounded-circle" height="200">
+      </div>
+      <div class="card-body">
+      <h4 class="card-title"><%=@sm.name%></h4>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+      </div>
+      <div class="card-footer">
+        <a href="/users/<%=@sm.id%>" class="btn btn-primary">Find Out More!</a>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+
+<h1>Members</h1>
 <br/><br/>
 <div class="row text-center">
   <% @users.each_with_index do |user, index|%>

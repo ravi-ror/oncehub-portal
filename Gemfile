@@ -68,3 +68,4 @@ gem 'thin'
 gem 'mini_racer'
 gem 'redis', '~> 3.2'
 gem 'friendly_id', '~> 5.2.4'
+gem "rolify"
