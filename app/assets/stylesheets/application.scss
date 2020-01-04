@@ -304,6 +304,7 @@ body, html {
         align-items: center;
         color: rgb(238, 5, 5);
         font-weight: 600;
+        text-transform: uppercase;
     }
     .others {
         text-align: right;
@@ -333,4 +334,10 @@ body, html {
         background-size: cover;
         height: 100%;
     }    
+}
+
+table{
+  tr{
+    transition: .4s all;
+  }
 }

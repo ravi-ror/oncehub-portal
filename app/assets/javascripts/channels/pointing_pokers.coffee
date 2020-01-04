@@ -34,7 +34,13 @@ $(document).on 'turbolinks:load', ->
           users.append points_html(data.message.user)
         else
           list = $('#users-list')
+          tr = $(list.children('tr.user-id-' + data.message.user_id))
+          debugger
           pointTd = $(list.children('tr.user-id-' + data.message.user_id).children('td')[1])
+          tr.css('background-color', '#3dc53b');
+          setInterval (->
+            tr.css('background-color', '#fff');
+          ), 600
           pointTd.html(data.message.point)
           console.log("Point rated", data)
 #        messages.append data['message']
