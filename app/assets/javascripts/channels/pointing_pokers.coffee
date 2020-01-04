@@ -28,7 +28,6 @@ $(document).on 'turbolinks:load', ->
         else
           list = $('#users-list')
           pointTd = list.children('tr.user-id-'+data.message.user_id).children('td.points')
-          debugger;
           pointTd.html(data.message.point)
           console.log("Point rated", data)
 #        messages.append data['message']
