@@ -1,4 +1,6 @@
 class PointingPokersController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @poker_room = PointingPoker.new
   end

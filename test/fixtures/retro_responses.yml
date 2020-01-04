@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  good: MyString
+  bad: MyString
+  user: one
+  retro: one
+
+two:
+  good: MyString
+  bad: MyString
+  user: two
+  retro: two

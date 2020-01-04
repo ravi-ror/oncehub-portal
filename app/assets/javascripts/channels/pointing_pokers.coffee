@@ -4,8 +4,8 @@ $(document).on 'turbolinks:load', ->
 
     points_html = (user) ->
       html = '<tr class="user-id-'+user.id+'">
-          <td id="name">'+user.email+'</td>
-          <td id="points">Not yet given</td>
+          <td class="name">'+user.email+'</td>
+          <td class="points">Not yet given</td>
           </tr>'
       return html
 

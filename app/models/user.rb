@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :pointing_pokers, dependent: :destroy
   has_many :points, dependent: :destroy
+  has_many :retros, dependent: :destroy
+  has_many :retro_responses, dependent: :destroy
 
   def name
     "#{first_name} #{last_name}"

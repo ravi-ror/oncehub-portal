@@ -1,0 +1,10 @@
+<h1>Add chat room</h1>
+
+<%= form_for @retro do |f| %>
+<div class="form-group">
+    <%= f.label :sprint_name %>
+    <%= f.text_field :sprint_name, autofocus: true, class: 'form-control' %>
+</div>
+
+<%= f.submit "Add!", class: 'btn btn-primary' %>
+<% end %>

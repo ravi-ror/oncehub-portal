@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_04_032533) do
+ActiveRecord::Schema.define(version: 2020_01_04_054340) do
 
   create_table "chat_rooms", force: :cascade do |t|
     t.string "title"
@@ -63,10 +63,24 @@ ActiveRecord::Schema.define(version: 2020_01_04_032533) do
     t.index ["user_id"], name: "index_points_on_user_id"
   end
 
+  create_table "retro_responses", force: :cascade do |t|
+    t.string "good"
+    t.string "bad"
+    t.integer "user_id"
+    t.integer "retro_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["retro_id"], name: "index_retro_responses_on_retro_id"
+    t.index ["user_id"], name: "index_retro_responses_on_user_id"
+  end
+
   create_table "retros", force: :cascade do |t|
     t.integer "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.string "sprint_name"
+    t.index ["user_id"], name: "index_retros_on_user_id"
   end
 
   create_table "teams", force: :cascade do |t|

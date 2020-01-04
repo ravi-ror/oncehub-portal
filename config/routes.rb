@@ -17,6 +17,9 @@ Rails.application.routes.draw do
 
     # Pointing poker
     resources :pointing_pokers, only: [:new, :create, :show, :index]
+
+    # Retros
+    resources :retros, only: [:new, :create, :show, :index]
   end
   resources :teams
   resources :users
