@@ -1,13 +1,14 @@
-<div class="card"> # you can use "others" class for chat oher than yours
+<div class="card <%= 'others' if @current_user.id != message.user.id %>">
+<!--  you can use "others" class for chat oher than yours-->
   <div class="card-block">
     <div class="row">
       <div class="col-md-1">
-        #<%= gravatar_for message.user %>
-        <span class="initials">DM</span>
+        <%#= gravatar_for message.user %>
+        <span class="initials"><%= message.user.first_name[0] %><%= message.user.last_name[0] %></span>
       </div>
       <div class="col-md-11">
         <p class="card-text">
-          <span class="text-muted"><%= message.user.email %> at <%= message.timestamp %> says</span><br>
+          <span class="text-muted"><%= message.user.name %> at <%= message.timestamp %> says</span><br>
           <%= message.body %>
         </p>
       </div>
