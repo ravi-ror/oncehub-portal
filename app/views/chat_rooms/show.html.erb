@@ -4,7 +4,7 @@
         <div class="panel-body">
           <div class="row">
             <div class="col-md-12 lead">
-              <h1><%= @chat_room.title %></h1>
+              <%= @chat_room.title %>
               <hr>
             </div>
           </div>
@@ -30,7 +30,7 @@
       <small class="text-muted">From 2 to 1000 characters</small>
     </div>
 
-  <%= f.submit "Post", class: 'btn btn-primary btn-lg' %>
+  <%= f.submit "Post", class: 'btn btn-primary' %>
   </div>
 </div>
 <% end %>

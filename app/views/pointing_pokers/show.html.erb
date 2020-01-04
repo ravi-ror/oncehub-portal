@@ -19,10 +19,6 @@
   <a class="text-info" href="<%= @url %>"><%= @url %></a>
 </div>
 
-<div id="pointing-poker" data-chat-room-id="<%= @poker_room.id %>">
-  SOme content
-</div>
-
 <%= form_for @point, url: '#' do |f| %>
 <div class="row">
   <div class="col-md-4">
@@ -32,14 +28,14 @@
     <small class="text-muted">From 2 to 10 characters</small>
   </div>
   <div class="poker-points">
-    <button class="btn btn-info" type="button">0 points</button>
-    <button class="btn btn-info" type="button">1/2 points</button>
-    <button class="btn btn-info" type="button">1 points</button>
-    <button class="btn btn-info" type="button">2 points</button>
-    <button class="btn btn-info" type="button">3 points</button>
-    <button class="btn btn-info" type="button">5 points</button>
-    <button class="btn btn-info" type="button">8 points</button>
-    <button class="btn btn-info" type="button">?</button>
+    <button class="btn btn-info btn-sm" type="button">0 points</button>
+    <button class="btn btn-info btn-sm" type="button">1/2 points</button>
+    <button class="btn btn-info btn-sm" type="button">1 points</button>
+    <button class="btn btn-info btn-sm" type="button">2 points</button>
+    <button class="btn btn-info btn-sm" type="button">3 points</button>
+    <button class="btn btn-info btn-sm" type="button">5 points</button>
+    <button class="btn btn-info btn-sm" type="button">8 points</button>
+    <button class="btn btn-info btn-sm" type="button">?</button>
   </div>
 
   <%= f.submit "Post", class: 'btn btn-primary btn-lg' %>
@@ -69,8 +65,6 @@
   </tbody>
 </table>
 <button class="btn btn-info" type="button" id="calculate">Show Points</button>
-<span id="story-point" class="btn btn-success pull-right"></span>
+<span id="story-point" class="btn btn-success pull-right">?</span>
 </div>
 </div>
-
-
