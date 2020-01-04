@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_03_204454) do
+ActiveRecord::Schema.define(version: 2020_01_04_032533) do
 
   create_table "chat_rooms", force: :cascade do |t|
     t.string "title"
@@ -39,6 +39,33 @@ ActiveRecord::Schema.define(version: 2020_01_03_204454) do
     t.datetime "updated_at", null: false
     t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "pointing_poker_channels", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "pointing_poker_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "points"
+    t.index ["pointing_poker_id"], name: "index_pointing_poker_channels_on_pointing_poker_id"
+  end
+
+  create_table "pointing_pokers", force: :cascade do |t|
+    t.string "title"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_pointing_pokers_on_user_id"
+  end
+
+  create_table "points", force: :cascade do |t|
+    t.integer "point"
+    t.integer "user_id"
+    t.integer "pointing_poker_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pointing_poker_id"], name: "index_points_on_pointing_poker_id"
+    t.index ["user_id"], name: "index_points_on_user_id"
   end
 
   create_table "retros", force: :cascade do |t|
