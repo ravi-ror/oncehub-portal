@@ -327,6 +327,12 @@ body, html {
     }
 }
 
+.poker-points {
+    button {
+        margin-bottom: 10px;
+    }
+}
+
 @media screen and (max-width: 1024px) {
     .home-bg {
         background: url(../images/banner.png) no-repeat;
