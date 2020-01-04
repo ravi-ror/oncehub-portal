@@ -1,4 +1,11 @@
 $(document).on 'turbolinks:load', ->
+
+  $('#join-session').click (e) ->
+    console.log("Session => ", $('#session-id').val())
+    session_id = $('#session-id').val();
+    if session_id.trim()
+      window.location.href = window.location.href.replace('new', session_id)
+
   messages = $('#pointing-poker')
   if $('#pointing-poker').length > 0
 
