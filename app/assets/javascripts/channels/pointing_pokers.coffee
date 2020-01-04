@@ -35,7 +35,6 @@ $(document).on 'turbolinks:load', ->
         else
           list = $('#users-list')
           tr = $(list.children('tr.user-id-' + data.message.user_id))
-          debugger
           pointTd = $(list.children('tr.user-id-' + data.message.user_id).children('td')[1])
           tr.css('background-color', '#3dc53b');
           setInterval (->
