@@ -5,7 +5,7 @@ $(document).on 'turbolinks:load', ->
     points_html = (user) ->
       html = '<tr class="user-id-'+user.id+'">
           <td id="name">'+user.email+'</td>
-          <td id="points">1</td>
+          <td id="points">Not yet given</td>
           </tr>'
       return html
 
@@ -27,7 +27,7 @@ $(document).on 'turbolinks:load', ->
           users.append points_html(data.message.user)
         else
           list = $('#users-list')
-          pointTd = list.children('tr.user-id-'+data.message.user_id).children('td.points')
+          pointTd = $(list.children('tr.user-id-' + data.message.user_id).children('td')[1])
           pointTd.html(data.message.point)
           console.log("Point rated", data)
 #        messages.append data['message']
@@ -49,11 +49,10 @@ $(document).on 'turbolinks:load', ->
       list = $('#users-list')
       tr = list.children('tr')
       sum = 0
-      counter = 1
+      counter = 0
       tr.each (i) ->
         e = $(tr[i])
-        console.log "Points ==============+> " + e.children('td.points').html()
-        sum += +e.children('td.points').html()
+        sum += +$(e.children('td')[1]).html()
         counter++
         return
       $('#story-point').html(Math.round(sum/counter))
