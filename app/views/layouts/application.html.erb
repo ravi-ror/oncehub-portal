@@ -20,17 +20,27 @@
 
         <div class="btn-group dropleft">
           <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Action
+            <i class="fa fa-bars" aria-hidden="true"></i>
           </button>
           <div class="dropdown-menu">
             <% if user_signed_in? %>
-              <a class="dropdown-item" href="#"><%= current_user.name%></a>
-              <a class="dropdown-item" href="#"><%= current_user.email%></a>
-              <a class="dropdown-item" href="/profile">Profile</a>
+              <a class="dropdown-item" href="/profile">
+                <i class="fa fa-user-circle" aria-hidden="true"></i> <%= current_user.name%>
+              </a>
+              <a class="dropdown-item" href="/profile">
+                <i class="fa fa-envelope-open" aria-hidden="true"></i> <%= current_user.email%>
+              </a>
               <div class="dropdown-divider"></div>
-              <%= link_to "Logout", "/logout", method: 'delete', class: "dropdown-item" %>
-            <% else %> 
-              <%= link_to "Login", "/login",class: "dropdown-item" %>
+              <a class="dropdown-item" rel="nofollow" data-method="delete" href="/logout">
+                <i class="fa fa-sign-out" aria-hidden="true"></i> Logout 
+              </a>
+            <% else %>
+            <a class="dropdown-item" href="/home">
+              <i class="fa fa-home" aria-hidden="true"></i> Home
+            </a>
+            <a class="dropdown-item" rel="nofollow" href="/login">
+                <i class="fa fa-sign-in" aria-hidden="true"></i> Login 
+              </a>
             <% end %>
           </div>
         </div>
@@ -47,6 +57,9 @@
             <ul class="sidebar-nav">
               <li>
                 <a href="/profile">Profile</a>
+              </li>
+              <li>
+                <a href="/users">Employees</a>
               </li>
               <li>
                 <a href="/teams">Teams</a>

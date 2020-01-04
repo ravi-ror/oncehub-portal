@@ -1,14 +1,14 @@
 <div class="row text-center">
-  <% @teams.each_with_index do |f, index| %>
+  <% @teams.each_with_index do |team, index| %>
     <div class="col-lg-3 col-md-6 mb-4">
       <div class="card h-100">
-        <div class="team-intials <%= getColor(index)%>"><%= getInitial(f.name)%></div>
+        <div class="team-intials <%= getColor(index)%>"><%= getInitial(team.name)%></div>
         <div class="card-body">
-        <h4 class="card-title"><%=f.name%></h4>
+        <h4 class="card-title"><%=team.name%></h4>
         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
         </div>
         <div class="card-footer">
-          <a href="/teams/<%=f.id%>" class="btn btn-primary">Find Out More!</a>
+          <a href="/teams/<%=team.slug%>" class="btn btn-primary">Find Out More!</a>
         </div>
       </div>
     </div>

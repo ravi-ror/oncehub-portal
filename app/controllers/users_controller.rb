@@ -1,11 +1,17 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user
+  before_action :set_user, except: [:show, :index]
 
-  def profile
+  def show #show any employee profile
+    @user = User.friendly.find(params[:id])
+    render :profile 
+  end
+
+  def profile #shows current user profile
   end
 
   def index
+    @users = User.all
   end
 
   def edit_profile

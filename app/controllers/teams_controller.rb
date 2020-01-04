@@ -6,7 +6,7 @@ class TeamsController < ApplicationController
   end
 
   def show
-    @team = Team.find(params[:id])
+    @team = Team.friendly.find(params[:id])
     @users = @team.users
   end
 end

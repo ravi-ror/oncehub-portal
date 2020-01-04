@@ -5,7 +5,11 @@
 
       <div class="px-4 pt-0 pb-4 bg-dark">
         <div class="media align-items-end profile-header">
-          <div class="profile mr-3"><img src="/assets/profile.png" alt="..." width="130" class="rounded mb-2 img-thumbnail"><a href="/edit-profile" class="btn btn-dark btn-sm btn-block">Edit profile</a></div>
+          <div class="profile mr-3"><img src="/assets/profile.png" alt="..." width="130" class="rounded mb-2 img-thumbnail">
+            <% if @user.id == current_user.id %>
+              <a href="/edit-profile" class="btn btn-dark btn-sm btn-block">Edit profile</a>
+            <% end %>  
+          </div>
           <div class="media-body mb-5 text-white">
             <h4 class="mt-0 mb-0"><%= @user.name %></h4>
             <!-- TODO define country -->
@@ -37,8 +41,16 @@
             </ul>
           </div>
         </div>
-      </div>
 
+        <!-- hobbies -->
+        <div class="py-4">
+          <h5 class="mb-3">Hobbies</h5>
+          <div class="p-4 bg-light rounded shadow-sm">
+            <p class="font-italic mb-0"><%= @user.hobbies %></p>
+          </div>
+        </div>
+
+      </div>
     </div><!-- End profile widget -->
   </div>
 </div>
