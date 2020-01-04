@@ -1,0 +1,44 @@
+<h1>You are giving point to "<%= @poker_room.title %>"</h1>
+
+Share URL this room ==> <%= @url %>
+
+<div id="pointing-poker" data-chat-room-id="<%= @poker_room.id %>">
+  SOme content
+</div>
+
+<%= form_for @point, url: '#' do |f| %>
+  <div class="form-group">
+    <%= f.label :point %>
+    <%= f.text_field :point, class: 'form-control' %>
+    <small class="text-muted">From 2 to 10 characters</small>
+  </div>
+
+  <%= f.submit "Post", class: 'btn btn-primary btn-lg' %>
+<% end %>
+
+<div>
+</div>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Team member</th>
+    <th scope="col">Points</th>
+  </tr>
+  </thead>
+  <tbody id="users-list">
+  <% @channel_users.each do |user| %>
+    <tr class="user-id-<%= user[:id] %>" data-user-id="<%= user[:id] %>">
+      <td class="name"><%= user[:email] %></td>
+      <td class="points"><%= user[:points] || 'Not given yet' %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<button class="btn btn-primary btn-lg" type="button" id="calculate">Calculate</button>
+
+
+Total story point is ==========++> <span id="story-point"></span>
+
+
+<a href="/pointing_pokers/new" class="btn btn-primary btn-lg">Calculate another story</a>

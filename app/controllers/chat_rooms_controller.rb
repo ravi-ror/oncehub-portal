@@ -9,6 +9,7 @@ class ChatRoomsController < ApplicationController
 
   def create
     @chat_room = current_user.chat_rooms.build(chat_room_params)
+    byebug
     if @chat_room.save
       redirect_to @chat_room
     else

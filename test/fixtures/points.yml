@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  point: 
+  user: one
+  pointing_pocker: one
+
+two:
+  point: 
+  user: two
+  pointing_pocker: two

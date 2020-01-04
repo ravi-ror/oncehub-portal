@@ -12,9 +12,11 @@ Rails.application.routes.draw do
     get 'private-chat-rooms', to: 'chat_rooms#index'
     resources :chat_rooms, only: [:new, :create, :show, :index]
 
+    # get 'create-retro', to: 'retros#create_retro'
+    # resources :retros, only: [:show]
 
-    get 'create-retro', to: 'retros#create_retro'
-    resources :retros, only: [:show]
+    # Pointing poker
+    resources :pointing_pokers, only: [:new, :create, :show, :index]
   end
   resources :teams
   resources :users

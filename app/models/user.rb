@@ -6,6 +6,8 @@ class User < ApplicationRecord
   belongs_to :team, optional: true
   has_many :chat_rooms, dependent: :destroy
   has_many :messages, dependent: :destroy
+  has_many :pointing_pokers, dependent: :destroy
+  has_many :points, dependent: :destroy
 
   def name
     "#{first_name} #{last_name}"
