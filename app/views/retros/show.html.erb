@@ -1,11 +1,30 @@
-<h1>You in retro of "<%= @retro.sprint_name %>"</h1>
+<div class="row">
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12 lead">
+              You in retro of <h1 style="display: inline; font-size: 24px;"><%= @retro.sprint_name %></h1>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-Share URL this room ==> <%= @url %>
+<div class="sharableUrl">
+  Share URL this room 
+  <a class="text-info" href="<%= @url %>"><%= @url %></a>
+</div>
+<br>
 
 <div id="retros" data-retro-room-id="<%= @retro.id %>">
 </div>
 
 <%= form_for @retro_response, url: '#' do |f| %>
+<div class="row">
+  <div class="col-md-4">
   <div class="form-group">
     <%= f.label :good %>
     <%= f.text_area :good, class: 'form-control' %>
@@ -19,9 +38,14 @@ Share URL this room ==> <%= @url %>
   </div>
 
   <%= f.submit "Post", class: 'btn btn-primary' %>
+</div>
+</div>
 <% end %>
 
 
+<br>
+<div class="row">
+  <div class="col-md-6">
 <table class="table">
   <thead>
   <tr>
@@ -40,3 +64,5 @@ Share URL this room ==> <%= @url %>
   <% end %>
   </tbody>
 </table>
+</div>
+</div>
