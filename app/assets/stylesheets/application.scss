@@ -356,6 +356,9 @@ body, html {
 
 .lead {
     font-size: 30px;
+    &.fontSize20 {
+        font-size: 20px;
+    }
 }
 
 @media screen and (max-width: 1024px) {

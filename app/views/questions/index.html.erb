@@ -1,12 +1,25 @@
-<h1>Questions</h1>
-
-<p>
-	<a class="btn btn-success" href="/questions/new" role="button">Ask new question</a>
-</p>
-
-<div>
-	<% @questions.each_with_index do |question, index|%>
-		<p><%=index+1%>: <a href="/questions/<%=question.id%>"><%= question.text %></a></p>
-	<%end%>
+<div class="container">
+    <div class="row">
+      <div class="col-md-9 about-us">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-12 lead">
+			  	Questions <a class="btn btn-success pull-right" href="/questions/new" role="button">Ask new question</a>
+                <hr>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+			  <p>
+			  	<% @questions.each_with_index do |question, index|%>
+					<p><%=index+1%>: <a href="/questions/<%=question.id%>"><%= question.text %></a></p>
+				<%end%>
+			  </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
-
