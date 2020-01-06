@@ -1,0 +1,7 @@
+<%= form_for @question do |f| %>
+	<div class="form-group">
+		<label>Questions</label>
+		<%= f.text_area :text, class: "form-control", placeholder: "text"%>
+	</div>
+	<button class="btn btn-primary" type="submit">Save</button>	
+<% end %>
