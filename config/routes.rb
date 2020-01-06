@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'home', :to => "static#index"
   get 'about', :to => "static#about"
+  get 'help', :to => "static#help"
   get 'leave-policies', :to => "leaves#policies"
   root :to => "static#index"
 

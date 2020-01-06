@@ -300,6 +300,18 @@ body, html {
     &.card-width {
         width: 20%;
     }
+    &.help-article {
+        width: 32%;
+        text-align: left;
+        .card-title {
+            font-size: 20px;
+        }
+        .card-text img{
+            width: 20px;
+            margin-top: -6px;
+            margin-right: 5px;
+        }
+    }
 }
 
 .chat-box {
@@ -340,6 +352,10 @@ body, html {
     button {
         margin-bottom: 10px;
     }
+}
+
+.lead {
+    font-size: 30px;
 }
 
 @media screen and (max-width: 1024px) {
