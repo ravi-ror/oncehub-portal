@@ -1,0 +1,25 @@
+<h1>Expenses</h2>
+
+<a class="btn btn-primary" href="/expenses/new" role="button">Add new</a></br></br>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Month</th>
+      <th>Year</th>
+      <th>Amount</th>
+      <th>Status</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @expenses.each do |expense| %>
+      <tr>
+        <td><%= expense.month%></td>
+        <td><%= expense.year%></td>
+        <td><%= expense.amount%></td>
+        <td><%= expense.status%></td>
+        <td><%= expense.description%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
