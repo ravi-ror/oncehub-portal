@@ -14,34 +14,53 @@
   </div>
 </div>
 
-<div class="sharableUrl">
-  Share URL this room 
-  <a class="text-info" href="<%= @url %>"><%= @url %></a>
-</div>
-
-<%= form_for @point, url: '#' do |f| %>
 <div class="row">
   <div class="col-lg-3 col-md-4 col-sm-12">
-  <div class="form-group">
-    <%= f.label :point %>
-    <%= f.text_field :point, class: 'form-control' %>
-    <small class="text-muted">From 2 to 10 characters</small>
+  <div class="poker-points" id="points-buttons">
+    <button class="btn btn-info btn-sm" data-points="0" type="button">0 points</button>
+    <button class="btn btn-info btn-sm" data-points=".5" type="button">1/2 points</button>
+    <button class="btn btn-info btn-sm" data-points="1" type="button">1 points</button>
+    <button class="btn btn-info btn-sm" data-points="2" type="button">2 points</button>
+    <button class="btn btn-info btn-sm" data-points="3" type="button">3 points</button>
+    <button class="btn btn-info btn-sm" data-points="5" type="button">5 points</button>
+    <button class="btn btn-info btn-sm" data-points="8" type="button">8 points</button>
   </div>
-  <div class="poker-points">
-    <button class="btn btn-info btn-sm" type="button">0 points</button>
-    <button class="btn btn-info btn-sm" type="button">1/2 points</button>
-    <button class="btn btn-info btn-sm" type="button">1 points</button>
-    <button class="btn btn-info btn-sm" type="button">2 points</button>
-    <button class="btn btn-info btn-sm" type="button">3 points</button>
-    <button class="btn btn-info btn-sm" type="button">5 points</button>
-    <button class="btn btn-info btn-sm" type="button">8 points</button>
-    <button class="btn btn-info btn-sm" type="button">?</button>
   </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12 lead">
+            Want to invite someone?
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <%= f.submit "Post", class: 'btn btn-primary btn-lg' %>
+<div class="sharableUrl">
+  Send this link: <a class="text-info" href="<%= @url %>"><%= @url %></a>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12 lead">
+            Team members
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  </div>
-<% end %>
+</div>
 
 <div>
 </div>
@@ -64,7 +83,7 @@
   <% end %>
   </tbody>
 </table>
-<button class="btn btn-info" type="button" id="calculate">Show Points</button>
+<button class="btn btn-info" type="button" id="calculate">Calculate Story Points</button>
 <span id="story-point" class="btn btn-success pull-right">?</span>
 </div>
 </div>
