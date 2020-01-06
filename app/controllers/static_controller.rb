@@ -5,4 +5,7 @@ class StaticController < ApplicationController
 
   def about
   end
+  
+  def faqs
+  end  
 end
