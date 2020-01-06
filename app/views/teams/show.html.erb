@@ -1,9 +1,24 @@
-<h1>Team: <%= @team.name %></h1>
-<br/>
-<br/>
-<%if @sm%>
-<h1>SM</h2>
+<div class="">
+  <div class="row">
+    <div class="col-md-12 about-us">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-12 lead">
+              Team: <%= @team.name %>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+<%if @sm%>
+<div class="col-md-12 lead">
+SM
+</div>
+<hr>
 <div class="row text-center">
   <div class="col-lg-3 col-md-6 mb-4">
     <div class="card h-100">
@@ -22,10 +37,10 @@
   </div>
 </div>
 <% end %>
-
-
-<h1>Members</h1>
-<br/><br/>
+<div class="col-md-12 lead">
+Members
+</div>
+<hr>
 <div class="row text-center">
   <% @users.each_with_index do |user, index|%>
     <div class="col-lg-3 col-md-6 mb-4">
@@ -45,3 +60,5 @@
     </div>
   <% end %>
 </div>
+</div>
+
