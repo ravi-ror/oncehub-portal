@@ -1,0 +1,12 @@
+<h1>Questions</h1>
+
+<p>
+	<a class="btn btn-success" href="/questions/new" role="button">Ask new question</a>
+</p>
+
+<div>
+	<% @questions.each_with_index do |question, index|%>
+		<p><%=index+1%>: <a href="/questions/<%=question.id%>"><%= question.text %></a></p>
+	<%end%>
+</div>
+

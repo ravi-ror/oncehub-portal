@@ -1,0 +1,22 @@
+Q: <%= @question.text%>
+
+<p>
+  <h2>Answers</h2>
+  <% @answers.each_with_index do |answer, index|%>
+    <p>
+      <%= index+1%>: <%= answer.text%>
+      <br/>
+      <small> Posted by: <%= answer.user.name%> on <%= answer.created_at%></small>
+    </p>
+  <%end%>
+</p>
+<p>
+  <%= form_for :answer, url: answers_path, method: :post do |f| %>
+    <div class="form-group">
+      <label>Submit new answer:</label>
+      <%= f.hidden_field :question_id, value: @question.id %>
+      <%= f.text_area :text, class: "form-control", placeholder: "text"%>
+    </div>
+    <button class="btn btn-primary" type="submit">Save</button>	
+  <% end %>
+</p>

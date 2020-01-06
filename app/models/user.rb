@@ -17,7 +17,7 @@ class User < ApplicationRecord
   has_many :retros, dependent: :destroy
   has_many :retro_responses, dependent: :destroy
   has_many :expenses, dependent: :destroy
-
+  has_many :questions, dependent: :destroy
   def name
     "#{first_name} #{last_name}"
   end

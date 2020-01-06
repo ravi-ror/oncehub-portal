@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
+  resources :answers
+  resources :questions
   resources :expenses
+
+
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', password: 'recover-password' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'home', :to => "static#index"
   get 'about', :to => "static#about"
   get 'help', :to => "static#help"
+  get 'faqs', :to => "static#faqs"
   get 'leave-policies', :to => "leaves#policies"
   root :to => "static#index"
 
