@@ -13,12 +13,6 @@
   </div>
 </div>
 
-<div class="sharableUrl">
-  Share URL this room 
-  <a class="text-info" href="<%= @url %>"><%= @url %></a>
-</div>
-<br>
-
 <div id="retros" data-retro-room-id="<%= @retro.id %>">
 </div>
 
@@ -37,12 +31,46 @@
     <small class="text-muted">From 2 to 1000 characters</small>
   </div>
 
-  <%= f.submit "Post", class: 'btn btn-primary' %>
+  <%= f.submit "Submit", class: 'btn btn-primary' %>
 </div>
 </div>
 <% end %>
 
+<br>
+<div class="row">
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12 lead">
+            Want to invite someone?
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<div class="sharableUrl">
+  Send this link: <a class="text-info" href="<%= @url %>"><%= @url %></a>
+</div>
+
+<br>
+<div class="row">
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12 lead">
+            Team members
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <br>
 <div class="row">
   <div class="col-md-6">

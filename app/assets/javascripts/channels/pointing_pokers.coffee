@@ -47,6 +47,8 @@ $(document).on 'turbolinks:load', ->
       send_message: (message, chat_room_id) ->
         @perform 'send_message', message: message, room_id: chat_room_id
 
+    $('#points-buttons button').click (e) ->
+      App.global_chat.send_message $(this).data('points'), messages.data('chat-room-id')
 
     $('#new_point').submit (e) ->
       $this = $(this)
