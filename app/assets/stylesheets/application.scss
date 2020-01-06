@@ -79,6 +79,9 @@
 .form-group label {
     font-weight: 600;
 }
+.card-title {
+    text-transform: capitalize;
+}
 
 img.avatar,
 div.avatar {
@@ -294,6 +297,9 @@ body, html {
 }
 .align-center > div {
     display: inline-block;
+    &.card-width {
+        width: 20%;
+    }
 }
 
 .chat-box {
